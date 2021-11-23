@@ -1,17 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 class ALogin extends React.Component {
 	constructor(props){
 		super(props);
 		this.state ={
 			aid: 0,
-			password: '',
+			password: ''
 		}
 	}
 	onAIDChange = (event) =>{this.setState({aid: event.target.value})}
 	onPasswordChange = (event) =>{this.setState({password: event.target.value})}
 
-	onSubmitALogin = ()=>{
+    
+	onSubmitHLogin = (event)=>{
 		fetch('', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -23,23 +25,27 @@ class ALogin extends React.Component {
 		.then(admin => {
 			if(!(admin.aid)){
 				alert(admin);
-				console.log(admin);
+				//console.log(admin);
+				event.preventDefault();
 			}
 			else{
 				this.props.loadAdmin(admin);
 			}
 		})
-		console.log(this.state);
+
+		//console.log(this.state)
 	}
+
 	render(){
+		
 		return(
 			<div className="container">
-				<b className="page_title">Admin Login </b>
+				<b className="page_title">Admin Login</b>
 				<div className="form">
 				  <div className="form_input">
 						<label>
 							<span className="label">Admin ID:<b style={{color: "red"}}>*</b></span> 
-							<input type="number" name="aid" id="aid" placeholder="XXX" onChange={this.onAIDChange}/>
+							<input type="number" name="aid" id="aid" placeholder="XXXXXXXX" onChange={this.onAIDChange}/>
 						</label>
 					</div>
 					<div className="form_input">
@@ -50,9 +56,12 @@ class ALogin extends React.Component {
 					</div>
 				</div>
 				<div className="submit_btn_div">
-					<Link to='/Admin'><button onClick={this.onSubmitALogin} type="submit">Login</button></Link>
+					<Link to='/Admin' onClick={this.onSubmitALogin} >
+						<button type="submit">Login</button>
+					</Link>
 				</div>
 			</div>
+
 		);
 	}
 }
