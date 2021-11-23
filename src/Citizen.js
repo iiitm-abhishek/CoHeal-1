@@ -36,7 +36,7 @@ class Citizen extends React.Component {
                         <td className = "mr3 pr3"><Link to="/Reschedule"><button>Reschedule</button> </Link></td>
                     </tr>
                     <tr>
-                        <td className = "mr3 pr3"></td>
+                        <td className = "mr3 p3"></td>
                         <td className = "mr3 pr3"></td>
                         <td className = "mr3 pr3"></td>
                         <td className = "mr3 pr3"><Link to="/Reschedule"><button>Reschedule</button> </Link></td>
