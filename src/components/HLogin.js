@@ -36,64 +36,38 @@ class HLogin extends React.Component {
 	}
 
 	render(){
-		
 		return(
 			<div>
-				{
-					this.state.showlink?
-						<div>
+			      {
+			         this.state.showlink?
+						     <div>
 							<h2>Logged in Successfully</h2>
 							<Link to='/Hospital' className="f4 blue link dim grow">Go to Hospital Dashoard</Link>
-						</div>
-					:
-						<div className="container">
-							<b className="page_title">Hospital Login</b>
-							<div className="form">
-							  <div className="form_input">
-									<label>
-										<span className="label">Hospital ID:<b style={{color: "red"}}>*</b></span> 
-										<input type="number" name="hid" id="hid" placeholder="XXXXXXXX" onChange={this.onHIDChange}/>
-									</label>
-								</div>
-								<div className="form_input">
-									<label>
-										<span className="label">Password:<b style={{color: "red"}}>*</b></span>
-										<input type="password" name="password" id="password" onChange={this.onPasswordChange}/>
-									</label>
-								</div>
-							</div>
-							<div className="submit_btn_div">
+						     </div>
+					             :
+						     <div className="container">
+							 <b className="page_title">Hospital Login</b>
+							 <div className="form">
+							     <div className="form_input">
+								  <label>
+									  <span className="label">Hospital ID:<b style={{color: "red"}}>*</b></span> 
+									  <input type="number" name="hid" id="hid" placeholder="XXXXXXXX" onChange={this.onHIDChange}/>
+								   </label>
+							      </div>
+							      <div className="form_input">
+								   <label>
+									   <span className="label">Password:<b style={{color: "red"}}>*</b></span>
+									   <input type="password" name="password" id="password" onChange={this.onPasswordChange}/>
+								   </label>
+							      </div>
+							  </div>
+							  <div className="submit_btn_div">
 								<button onClick={this.onSubmitHLogin} type="submit">Login</button>
-							</div>
-						</div>
+							  </div>
+						       </div>
 				}
 			</div>
-
-
-			/*<div className="container">
-				<b className="page_title">Hospital Login</b>
-				<div className="form">
-				  <div className="form_input">
-						<label>
-							<span className="label">Hospital ID:<b style={{color: "red"}}>*</b></span> 
-							<input type="number" name="hid" id="hid" placeholder="XXXXXXXX" onChange={this.onHIDChange}/>
-						</label>
-					</div>
-					<div className="form_input">
-						<label>
-							<span className="label">Password:<b style={{color: "red"}}>*</b></span>
-							<input type="password" name="password" id="password" onChange={this.onPasswordChange}/>
-						</label>
-					</div>
-				</div>
-				<div className="submit_btn_div">
-					<Link to='/Hospital' onClick={this.onSubmitHLogin} >
-						<button type="submit">Login</button>
-					</Link>
-				</div>
-			</div>*/
-
-		);
-	}
+		     );
+	  }
 }
 export default HLogin;
