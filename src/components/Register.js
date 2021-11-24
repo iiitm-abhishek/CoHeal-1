@@ -55,81 +55,81 @@ class Register extends React.Component {
 	render(){
 		return(
 			<div>
-				{
-					this.state.showlink?
-						<div>
-							<h2>Registered Successfully</h2>
-							<Link to='/Citizen' className="f4 blue link dim grow">Go to Citizen Dashoard</Link>
+			      {
+				 this.state.showlink?
+				      <div>
+					    <h2>Registered Successfully</h2>
+					    <Link to='/Citizen' className="f4 blue link dim grow">Go to Citizen Dashoard</Link>
+				      </div>
+				  :
+				      <div className="container">
+					   <b className="page_title">Register</b>
+						<div className="form">
+						     <div className="form_input">
+							  <label>
+								  <span className="label"> Name<b style={{color: "red"}}>*</b>:</span>
+								  <input type="text" name="name" id="name" onChange={this.onNameChange} />
+							   </label>
+						       </div>
+						       <div className="form_input">
+							    <label>
+								    <span className="label">UID<b style={{color: "red"}}>*</b>:</span>
+								    <input type="number" name="uid" id="uid" placeholder="XXXXXXXXXXXX" onChange={this.onUIDChange} />
+							     </label>
+							</div>
+							<div className="form_input">
+							     <label>
+								    <span  className="label"> Age<b style={{color: "red"}}>*</b>:</span>
+								    <input type="number" name="age" id="age" onChange={this.onAgeChange} />
+							     </label>
+							</div>
+							<div className="form_input">
+							     <label>
+								    <span className="label"> Gender<b style={{color: "red"}}>*</b>:</span>
+								    <select id="gender" name="gender" defaultValue="" onChange={this.onGenderChange}>
+									<option disabled value="">Select Option</option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+									<option value="Other">Other</option>
+								     </select>
+							      </label>
+							 </div>
+							 <div className="form_input">
+							      <label>
+								     <span className="label"> Address<b style={{color: "red"}}>*</b>:</span>
+								     <textarea style={{ resize: 'none' }} id="address" name="address" onChange={this.onAddressChange}></textarea>
+							      </label>
+							 </div>
+							 <div className="form_input">
+							      <label>
+								     <span className="label"> Phone Number: </span>
+								     <input type="number" step="0" name="number" id="number" onChange={this.onNumberChange} />
+							      </label>
+							 </div>
+							 <div className="form_input">
+							      <label>
+								     <span className="label"> Email: </span>
+								     <input type="email" name="email-address" id="email-address" onChange={this.onEmailChange} />
+							      </label>
+							 </div>
+							 <div className="form_input">
+							      <label>
+								     <span className="label"> Password<b style={{color: "red"}}>*</b>:</span>
+								     <input type="password" name="password" id="password" onChange={this.onPasswordChange} />
+							      </label>
+							 </div>
+							 <center className="f5"><b style={{color: "red"}}>*</b> <strong style={{color: "purple"}}>represents required field</strong></center>
+						 </div>
+						 <div className="submit_btn_div">
+						      <button onClick={this.onSubmitRegister} type="submit">Register</button>
+						 </div>
+						 <div className="f5 pt2">
+						      <b>Registered User?</b>
+						      <Link to="/Login" onClick={() => this.props.onRouteChange('/Login')}>
+						      	<p className='link grow black dim underline dib pointer'>Login</p>
+						      </Link>
 						</div>
-					:
-						<div className="container">
-							<b className="page_title">Register</b>
-								<div className="form">
-									<div className="form_input">
-										<label>
-											<span className="label"> Name<b style={{color: "red"}}>*</b>:</span>
-											<input type="text" name="name" id="name" onChange={this.onNameChange} />
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-									        <span className="label">UID<b style={{color: "red"}}>*</b>:</span>
-											<input type="number" name="uid" id="uid" placeholder="XXXXXXXXXXXX" onChange={this.onUIDChange} />
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-											<span  className="label"> Age<b style={{color: "red"}}>*</b>:</span>
-											<input type="number" name="age" id="age" onChange={this.onAgeChange} />
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-											<span className="label"> Gender<b style={{color: "red"}}>*</b>:</span>
-											<select id="gender" name="gender" defaultValue="" onChange={this.onGenderChange}>
-												<option disabled value="">Select Option</option>
-												<option value="Male">Male</option>
-												<option value="Female">Female</option>
-												<option value="Other">Other</option>
-											</select>
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-											<span className="label"> Address<b style={{color: "red"}}>*</b>:</span>
-											<textarea style={{ resize: 'none' }} id="address" name="address" onChange={this.onAddressChange}></textarea>
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-											<span className="label"> Phone Number: </span>
-											<input type="number" step="0" name="number" id="number" onChange={this.onNumberChange} />
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-											<span className="label"> Email: </span>
-											<input type="email" name="email-address" id="email-address" onChange={this.onEmailChange} />
-										</label>
-									</div>
-									<div className="form_input">
-										<label>
-											<span className="label"> Password<b style={{color: "red"}}>*</b>:</span>
-											<input type="password" name="password" id="password" onChange={this.onPasswordChange} />
-										</label>
-									</div>
-									<center className="f5"><b style={{color: "red"}}>*</b> <strong style={{color: "purple"}}>represents required field</strong></center>
-								</div>
-								  <div className="submit_btn_div">
-									<button onClick={this.onSubmitRegister} type="submit">Register</button>
-								</div>
-								<div className="f5 pt2">
-									Registered User?<b> </b>
-									<Link to="/Login" onClick={() => this.props.onRouteChange('/Login')}>
-										<p className='link grow black dim underline dib pointer'>Login</p>
-									</Link>
-								</div>
-						</div>
+				       </div>
 				}
 			</div>
 		);
