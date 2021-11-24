@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class HLogin extends React.Component {
+class HLogin extends React.Component {  /*Hospital Login class component */
 	constructor(props){
 		super(props);
 		this.state ={
@@ -24,27 +24,27 @@ class HLogin extends React.Component {
 		}).then(response => response.json())
 		.then(hospital => {
 			if(!(hospital.hid)){
-				alert(hospital);
-				console.log(hospital);
+				alert(hospital);     
+				console.log(hospital); /*console.log() is used for debugging purpose */
 			}
 			else{
 				this.props.loadHospital(hospital);
 				this.setState({showlink:true})
 			}
 		})
-		console.log(this.state)
+		console.log(this.state) /*console.log() is used for debugging purpose */
 	}
 
 	render(){
 		return(
 			<div>
 			      {
-			         this.state.showlink?
+			         this.state.showlink? /* if logged in, show success message */
 						     <div>
 							<h2>Logged in Successfully</h2>
 							<Link to='/Hospital' className="f4 blue link dim grow">Go to Hospital Dashoard</Link>
 						     </div>
-					             :
+					             : /* if not logged in, show the login form */
 						     <div className="container">
 							 <b className="page_title">Hospital Login</b>
 							 <div className="form">
