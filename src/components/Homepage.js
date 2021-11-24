@@ -4,7 +4,7 @@ import SearchBox from './SearchBox';
 //import SearchList from './SearchList';
 
 
-class HomePage extends Component {
+class HomePage extends Component {   /* Homepage class Components */
      constructor(){
             super()
             this.state ={
@@ -23,7 +23,7 @@ class HomePage extends Component {
       console.log(this.state);
   }
 
-   renderVListData(){
+   renderVListData(){   /* render the vaccine data */
       return this.state.list.map((slot, index) => {
       const {name, date, ava  } = slot //destructuring
            return (
@@ -35,7 +35,7 @@ class HomePage extends Component {
                    )
              })
    }
-   renderIListData(){
+   renderIListData(){   /* render the ICU data */
       return this.state.list.map((slot, index) => {
       const {name, ava  } = slot //destructuring
             return (
