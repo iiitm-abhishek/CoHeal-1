@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import AddHospital from './AddHospital';
 import RemoveHospital from './RemoveHospital';
 import '../App.css';
-class Admin extends React.Component {
+class Admin extends React.Component {              /* Admin class component */
 	constructor(props){
 		super(props);
 		this.state ={
@@ -18,7 +18,7 @@ class Admin extends React.Component {
 	
 	render(){
 		if(this.props.admin.islogged === false){
-			return(
+			return(   /*  if admin is not logged in, show this div */
 				<div>
 					<div className="f4 pt4 pb3">Admin not Logged In</div>
 					<Link className="f5 black link dim underline" to='/Alogin'>Login here</Link>
@@ -26,7 +26,7 @@ class Admin extends React.Component {
 			)
 		}
 		else{
-			return(
+			return(  /* if admin logged in , show this div */
 				<div>
 					<div className="container">
 						<h1 className='page_title center'> Admin {this.state.aid} Dashboard</h1>
