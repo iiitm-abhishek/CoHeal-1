@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class AddHospital extends React.Component {
+class AddHospital extends React.Component {    /* AddHospital class component */
 	constructor(props){
 		super(props);
 		this.state ={
@@ -36,11 +36,11 @@ class AddHospital extends React.Component {
 		}).then(response => response.json())
 		.then(hospital => {
 			if(!(hospital[0].hid)){
-				alert(hospital);
+				alert(hospital);                
 				console.log(hospital);
 			}
 			else{
-				alert("Registered Successfully");
+				alert("Registered Successfully");       /* registration success message */
 				this.props.togglebtn('')
 				console.log(hospital);
 			}
