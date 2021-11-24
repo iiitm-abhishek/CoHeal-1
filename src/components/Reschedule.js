@@ -5,7 +5,7 @@ class Reschedule extends React.Component {
 		super(props);
 		this.state ={
 			newdate: 0,
-	        hospital:''
+	                hospital:''
 		}
 	}
 	onNewdateChange = (event) =>{this.setState({newdate: event.target.value})}
