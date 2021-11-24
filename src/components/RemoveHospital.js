@@ -71,7 +71,7 @@ class RemoveHospital extends React.Component {
 		return(
 			<div>
 			{
-			    this.state.confirm ? 
+			    this.state.confirm ?
 				 <div>
 				      <div className="container">
 				          <b className="page_title">Confirm Delete</b>
@@ -83,7 +83,7 @@ class RemoveHospital extends React.Component {
 					        </div>
 					    </div>
 					    <div className="submit_btn_div">
-						  <button type="submit" className="bt mr5" onClick={this.onSubmitHDelete}>Delete</button>
+						  <button type="submit" className="bt mr5 danger" onClick={this.onSubmitHDelete}>Delete</button>
 						  <button type="submit" className="bt ml5" onClick={this.props.togglebtn}>Cancel</button>
 				            </div>
 					</div>
