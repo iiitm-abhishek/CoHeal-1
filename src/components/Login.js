@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-class Login extends React.Component {
+class Login extends React.Component {  /*Login class components */
 	constructor(props){
 		super(props);
 		this.state ={
@@ -39,12 +39,12 @@ class Login extends React.Component {
 		return(
 			<div>
 			      {
-				this.state.showlink?
+				this.state.showlink? /* if logged in, show success message */
 				    <div>
 					  <h2>Logged in Successfully</h2>
 					  <Link to='/Citizen' className="f4 blue link dim grow">Go to Citizen Dashoard</Link>
 				    </div>
-				 :
+				 : /* if not logged in, show login form */
 				    <div className="container">
 					<b className="page_title">Login </b>
 				           <div className="form">
