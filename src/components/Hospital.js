@@ -12,7 +12,7 @@ class Hospital extends React.Component {
 		      newava:0,
 		      newicu:0
 		}
-		console.log(this.props)
+		console.log(this.props)    /*console.log() is used for debugging purpose */
 		console.log(this.state);
 	}
 
@@ -48,7 +48,9 @@ class Hospital extends React.Component {
 			})
 		}).then(response => response.json())
 		.then(list => {
-			if(list==="Not Available"){ console.log(list) }
+			if(list==="Not Available"){
+			    console.log(list) 
+			}
 			else{
 				this.setState({
 					icuava:list[0].ava
