@@ -71,41 +71,41 @@ class RemoveHospital extends React.Component {
 		return(
 			<div>
 			{
-				this.state.confirm ? 
-					<div>
-						<div className="container">
-						<b className="page_title">Confirm Delete</b>
-						<div className="form">
-						  <div className="form_input">
-									<span className="label">Hospital name: <b style={{color: "blue"}}>{this.state.hospital.name}</b></span><br/>
-									<span className="label">Address: <b style={{color: "blue"}}>{this.state.hospital.address}</b></span><br/>
-									<span className="label">Pincode: <b style={{color: "blue"}}>{this.state.hospital.pincode}</b></span> <br/>
-							</div>
-						</div>
-						<div className="submit_btn_div">
-							<button type="submit" className="bt mr5" onClick={this.onSubmitHDelete}>Delete</button>
-							<button type="submit" className="bt ml5" onClick={this.props.togglebtn}>Cancel</button>
-						</div>
+			    this.state.confirm ? 
+				 <div>
+				      <div className="container">
+				          <b className="page_title">Confirm Delete</b>
+				           <div className="form">
+						<div className="form_input">
+						     <span className="label">Hospital name: <b style={{color: "blue"}}>{this.state.hospital.name}</b></span><br/>
+						     <span className="label">Address: <b style={{color: "blue"}}>{this.state.hospital.address}</b></span><br/>
+						     <span className="label">Pincode: <b style={{color: "blue"}}>{this.state.hospital.pincode}</b></span> <br/>
+					        </div>
+					    </div>
+					    <div className="submit_btn_div">
+						  <button type="submit" className="bt mr5" onClick={this.onSubmitHDelete}>Delete</button>
+						  <button type="submit" className="bt ml5" onClick={this.props.togglebtn}>Cancel</button>
+				            </div>
 					</div>
-					</div>
+				  </div>
 				:
-					<div className="container">
-						<b className="page_title">Remove Hospital</b>
-						<div className="form">
-						  <div className="form_input">
-								<label>
-									<span className="label">Hospital ID:<b style={{color: "red"}}>*</b></span> 
-									<input type="number" name="hid" id="hid" placeholder="XXXXXXXX" onChange={this.onHIDChange}/>
-								</label>
-							</div>
-						</div>
-						<div className="submit_btn_div">
-							<button type="submit" className="bt mr5" onClick={this.onSubmitHRemove}>Remove Hospital</button>
-							<button type="submit" className="bt ml5" onClick={this.props.togglebtn}>Cancel</button>
-						</div>
-					</div>
+				  <div className="container">
+				      <b className="page_title">Remove Hospital</b>
+				      <div className="form">
+				          <div className="form_input">
+					       <label>
+						      <span className="label">Hospital ID:<b style={{color: "red"}}>*</b></span> 
+						      <input type="number" name="hid" id="hid" placeholder="XXXXXXXX" onChange={this.onHIDChange}/>
+					       </label>
+				          </div>
+				      </div>
+				      <div className="submit_btn_div">
+					     <button type="submit" className="bt mr5" onClick={this.onSubmitHRemove}>Remove Hospital</button>
+					     <button type="submit" className="bt ml5" onClick={this.props.togglebtn}>Cancel</button>
+				       </div>
+				 </div>
 			}
-			</div>
+		     </div>
 		);
 	}
 }
