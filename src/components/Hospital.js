@@ -21,7 +21,7 @@ class Hospital extends React.Component {
 		this.geticuava();
 	}
 
-	getvacava=()=>{
+	getvacava=()=>{                                /* function to get the avilable vaccines */
 		fetch('http://localhost:3001/getvacava', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -39,7 +39,7 @@ class Hospital extends React.Component {
 			}
 		})
 	}
-	geticuava=()=>{
+	geticuava=()=>{                                    /* function to get the avilable ICU's */
 		fetch('http://localhost:3001/geticuava', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -59,19 +59,19 @@ class Hospital extends React.Component {
 		})
 	}
 
-	renderVListData(){
+	renderVListData(){             /* this function will render the vaccine data avilable */
              return this.state.vaclist.map((slot, index) => {
              const { date, ava  } = slot //destructuring
                   return (
                           <tr key={date}>
-                             <td className = "pr2 br">{date}</td>
+                             <td className = "pr2 br">{date}</td>    
                              <td className = "pl2">{ava}</td>
                           </tr>
                          )
                  })
        }
 
-       renderVFormData(){
+       renderVFormData(){            
               return this.state.updlist.map((slot, index) => {
               const { date, ava  } = slot //destructuring
                    return (
@@ -83,7 +83,7 @@ class Hospital extends React.Component {
                  })
       }
 
-      onSlotChange=(event)=>{
+      onSlotChange=(event)=>{   /* function to change the slots */
   	 this.setState({
   		newdate:event.target.id.slice(0,-15)+(parseInt(event.target.id[9])+1),
   		newava:event.target.value
@@ -113,7 +113,7 @@ class Hospital extends React.Component {
 		})
    }
 
-   onUpdICU=()=>{
+   onUpdICU=()=>{                       
    	 fetch('http://localhost:3001/updateicuava', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -131,7 +131,7 @@ class Hospital extends React.Component {
 	
    render(){
 	     if(this.props.hospital.islogged === false){
-		 return(
+		 return(    /* if not logged in, show the message*/
 		         <div>
 			       <div className="f4 pt4 pb3">Hospital not Logged In</div>
 			       <Link className="f5 black link dim underline" to='/Hlogin'>Login here</Link>
@@ -139,7 +139,7 @@ class Hospital extends React.Component {
 			)
 		}
 		else{
-		      return(
+		      return( /* if logged in, show all details avilable */
 			      <div>
 				   <div className="br4 ba b--black-10 mv4 w-100 w-80-m w-80-l mw7 shadow-5 center">
 				           <h1> Hospital Dashboard</h1>
