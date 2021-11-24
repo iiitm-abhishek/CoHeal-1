@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class Register extends React.Component {
+class Register extends React.Component {   /* Register class component */
 	constructor(props){
 		super(props);
 		this.state ={
@@ -25,7 +25,7 @@ class Register extends React.Component {
 	onEmailChange = (event) =>{this.setState({email: event.target.value})}
 	onPasswordChange = (event) =>{this.setState({password: event.target.value})}
 
-	onSubmitRegister = ()=>{
+	onSubmitRegister = ()=>{               
 		fetch('http://localhost:3001/cregister', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -56,12 +56,12 @@ class Register extends React.Component {
 		return(
 			<div>
 			      {
-				 this.state.showlink?
+				 this.state.showlink? /* if logged in, show success message */
 				      <div>
 					    <h2>Registered Successfully</h2>
 					    <Link to='/Citizen' className="f4 blue link dim grow">Go to Citizen Dashoard</Link>
 				      </div>
-				  :
+				  :  /* if not logged in, show register form */
 				      <div className="container">
 					   <b className="page_title">Register</b>
 						<div className="form">
@@ -124,7 +124,7 @@ class Register extends React.Component {
 						      <button onClick={this.onSubmitRegister} type="submit">Register</button>
 						 </div>
 						 <div className="f5 pt2">
-						      <b>Registered User?</b>
+						      <b>Already Registered ?</b>
 						      <Link to="/Login" onClick={() => this.props.onRouteChange('/Login')}>
 						      	<p className='link grow black dim underline dib pointer'>Login</p>
 						      </Link>
